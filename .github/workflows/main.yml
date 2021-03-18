@@ -19,12 +19,7 @@ jobs:
   printInputs:
     runs-on: ubuntu-latest
     steps:
-    - run: |
-        echo GITHUB_SHA:$GITHUB_SHA
-        echo GITHUB_REF:$GITHUB_REF
-
-    - run: |
-        git pull
-        
-        git checkout $GITHUB_SHA
+    - uses: actions/checkout@v2
+      with:
+        ref: $GITHUB_SHA
 
