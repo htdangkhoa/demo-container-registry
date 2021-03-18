@@ -14,6 +14,8 @@ jobs:
     steps:
     - name: Get current package version
       uses: martinbeentjes/npm-get-version-action@v1.1.0
+      with:
+        path: "../../package.json"
       
     - run: |
         echo hello world ${{ env.TEST }} ${{ steps.package-version.outputs.current-version }}
