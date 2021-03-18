@@ -20,3 +20,4 @@ jobs:
       
     - run: |
         echo hello world ${{ env.TEST }} ${{ steps.package-version.outputs.current-version }}
+        echo Branch: ${{ github.ref }}
