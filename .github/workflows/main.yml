@@ -21,7 +21,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        ref: github.ref
+        ref: ${{ github.ref }}
     
     - name: Get current package version
       id: package-version
