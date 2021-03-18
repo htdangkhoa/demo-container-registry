@@ -5,10 +5,13 @@ name: trigger
 on: 
   workflow_dispatch:
 
+env:
+  TEST: "1111"
+
 jobs:
   printInputs:
     runs-on: ubuntu-latest
     steps:
     - run: |
-        echo "hello world"
+        echo "hello world ${{ env.TEST }}"
 
