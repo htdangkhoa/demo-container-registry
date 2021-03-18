@@ -21,7 +21,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        ref: ${{ github.base_ref }}
+        ref: ${{ $GITHUB_REF }}
     
     - name: Get current package version
       id: package-version
@@ -33,5 +33,5 @@ jobs:
       
     - run: |
         echo hello world ${{ env.TEST }} ${{ steps.package-version.outputs.current-version }}
-        echo Branch: ${{ github.base_ref }}
+        echo GITHUB_REF:$GITHUB_REF
 
