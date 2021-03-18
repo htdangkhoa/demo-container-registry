@@ -13,5 +13,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: |
-        echo "hello world ${{ env.TEST }}"
+        echo hello world ${{ env.TEST }}
 
