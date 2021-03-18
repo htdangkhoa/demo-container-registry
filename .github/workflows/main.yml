@@ -19,19 +19,12 @@ jobs:
   printInputs:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-      with:
-        ref: $GITHUB_REF
-    
-    - name: Get current package version
-      id: package-version
-      uses: martinbeentjes/npm-get-version-action@v1.1.0
-      
     - run: |
-        echo "Log level: ${{ github.event.inputs.logLevel }}"
-        echo "Tags: ${{ github.event.inputs.tags }}"
-      
-    - run: |
-        echo hello world ${{ env.TEST }} ${{ steps.package-version.outputs.current-version }}
+        echo GITHUB_SHA:$GITHUB_SHA
         echo GITHUB_REF:$GITHUB_REF
+
+    - run: |
+        git pull
+        
+        git checkout $GITHUB_SHA
 
